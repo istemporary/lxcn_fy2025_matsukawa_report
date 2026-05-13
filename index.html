@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会とつながる教室 | 松川高校 社会教養 2025</title>
+<style>
+/*
+ * LXCN Design Tokens
+ * Learn by Creation NAGANO実行委員会
+ *
+ * SPACE10デザインシステムをベースに、LXCNブランドカラーを適用。
+ * 白黒ニュートラルを基盤とし、アクセントカラー3色をSPACE10と1:1対応させる。
+ *
+ * SPACE10との対応：
+ *   SPACE10 Yellow  #FFD600  →  LXCN Yellow  #F1D035  (--color-yellow)
+ *   SPACE10 Blue    #2255F0  →  LXCN Blue    #133582  (--color-blue)
+ *   SPACE10 Orange  #FF5A00  →  Passion Red  #E03B20  (--color-red)
+ */
+
+:root {
+
+  /* ────────────────────────────────────────
+   * COLOR — Base（ニュートラル基盤）
+   * ──────────────────────────────────────── */
+  --color-black:      #000000;
+  --color-white:      #FFFFFF;
+  --color-gray-100:   #F0F0F0;  /* 背景の変化、区切り面、テーブル背景 */
+  --color-gray-300:   #CCCCCC;  /* 非アクティブテキスト、ボーダー */
+  --color-gray-500:   #888888;  /* 補助テキスト、キャプション */
+  --color-gray-700:   #444444;  /* セカンダリテキスト */
+
+  /* ────────────────────────────────────────
+   * COLOR — Accent（LXCNブランド・SPACE10対応）
+   * 使用は全体の10〜20%以内に抑える。
+   * 出典：Learn by Creation ブランドガイドライン（全3色）
+   * ──────────────────────────────────────── */
+  --color-yellow:     #F1D035;  /* LXCN Yellow  ← SPACE10 Yellow  #FFD600
+                                   用途：タイムラインバー・アクティブ状態・全面背景（エネルギッシュな場面）*/
+  --color-blue:       #133582;  /* LXCN Blue    ← SPACE10 Blue    #2255F0
+                                   用途：全面背景（権威・重要な場面）・セクション区切り */
+  --color-red:        #E03B20;  /* Passion Red  ← SPACE10 Orange  #FF5A00
+                                   用途：全面背景（ブランド強調）・タイトルアクセント・CTA */
+
+  /* ────────────────────────────────────────
+   * COLOR — Semantic（決算・差分など機能的な色）
+   * 増減・収支の表示にのみ使用する。装飾には使わない。
+   * ──────────────────────────────────────── */
+  --color-positive:   #006874;  /* Teal — プラス差分・収支均衡 */
+  --color-negative:   #B53D00;  /* Burnt Orange — マイナス差分 */
+
+  /* ────────────────────────────────────────
+   * TYPOGRAPHY
+   * ──────────────────────────────────────── */
+  --font-family:      'Noto Sans JP', sans-serif;
+
+  /* スケール */
+  --font-size-display: 56px;   /* スライドメインタイトル */
+  --font-size-h1:      40px;   /* 文書タイトル */
+  --font-size-h2:      28px;   /* セクション見出し */
+  --font-size-h3:      20px;   /* サブ見出し */
+  --font-size-body:    16px;   /* 本文 */
+  --font-size-small:   13px;   /* 注釈、ラベル */
+  --font-size-meta:    11px;   /* フッター、メタ情報 */
+
+  /* ウェイト */
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-bold:    700;
+
+  /* 行間 */
+  --line-height-tight:   1.1;   /* 大見出し */
+  --line-height-normal:  1.6;   /* 本文 */
+  --line-height-relaxed: 1.85;  /* 読み物・長文 */
+
+  /* ────────────────────────────────────────
+   * SPACING（8px基準グリッド）
+   * ──────────────────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  32px;
+  --space-6:  48px;
+  --space-7:  64px;
+  --space-8:  96px;
+  --space-9: 128px;
+
+  /* ────────────────────────────────────────
+   * LAYOUT
+   * ──────────────────────────────────────── */
+  --max-width-document: 960px;    /* スクロール型文書の最大幅 */
+  --max-width-slide:   1280px;    /* スライド型の最大幅 */
+  --slide-aspect:      56.25%;    /* 16:9 */
+  --margin-edge:        48px;     /* SPACE10準拠：端からの余白 */
+
+  /* ────────────────────────────────────────
+   * BORDER & DIVIDER
+   * ──────────────────────────────────────── */
+  --border-hairline: 1px solid var(--color-black);
+  --border-light:    1px solid var(--color-gray-300);
+
+  /* ────────────────────────────────────────
+   * SHADOWS（必要最小限）
+   * ──────────────────────────────────────── */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+
+}
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);color:#000;-webkit-font-smoothing:antialiased;zoom:1.25}
+
+/* ─── HERO ─── */
+.hero{position:relative;height:560px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.55) 100%)}
+.hero-content{position:absolute;bottom:64px;left:0;right:0;padding:0 48px;color:#fff}
+.hero-eyebrow{font-size:12px;letter-spacing:.18em;font-weight:500;opacity:.8;margin-bottom:16px}
+.hero-title{font-size:52px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+.hero-sub{font-size:16px;opacity:.85;line-height:1.6;max-width:560px}
+
+/* ─── CONTAINER ─── */
+.container{max-width:800px;margin:0 auto;padding:0 48px}
+
+/* ─── SECTION ─── */
+.section{padding:80px 0}
+.section + .section{border-top:1px solid #eee}
+.section-eyebrow{font-size:11px;letter-spacing:.18em;font-weight:700;color:#666;text-transform:uppercase;margin-bottom:24px}
+.section-title{font-size:36px;font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:32px}
+.section-title-sm{font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1.2;margin-bottom:24px}
+.body-text{font-size:16px;line-height:1.85;color:#444;margin-bottom:16px}
+.body-text:last-child{margin-bottom:0}
+
+/* ─── 実践者 ─── */
+.practitioner{display:flex;gap:40px;align-items:flex-start}
+.practitioner-photo-wrap{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.practitioner-photo{width:100%;height:100%;object-fit:cover;object-position:center}
+.practitioner-name{font-size:28px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.practitioner-title{font-size:13px;color:#666;letter-spacing:.04em;margin-bottom:16px}
+.practitioner-desc{font-size:15px;line-height:1.85;color:#444}
+
+/* ─── 概要カード ─── */
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#eee;border:1px solid #eee}
+.overview-item{background:#fff;padding:20px 24px}
+.overview-label{font-size:11px;letter-spacing:.12em;color:#666;font-weight:700;margin-bottom:6px}
+.overview-value{font-size:18px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+.overview-value-sm{font-size:15px;font-weight:500;color:#444;margin-top:4px;line-height:1.6}
+
+/* ─── 目的 ─── */
+.purpose-tag{display:inline-block;background:#E03B20;color:#fff;font-size:14px;font-weight:700;padding:6px 16px;letter-spacing:.04em;margin-bottom:24px}
+.principle-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:40px}
+.principle-item{border-top:3px solid #000;padding-top:16px}
+.principle-title{font-size:15px;font-weight:700;margin-bottom:10px}
+.principle-desc{font-size:13px;color:#666;line-height:1.75}
+
+/* ─── カリキュラム体系 ─── */
+.curriculum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid #eee}
+.curriculum-col{padding:24px}
+.curriculum-col + .curriculum-col{border-left:1px solid #eee}
+.curriculum-phase{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.curriculum-type{font-size:12px;letter-spacing:.08em;color:#666;margin-bottom:16px;font-weight:500}
+.curriculum-prog-name{font-size:14px;font-weight:700;margin-bottom:4px}
+.curriculum-prog-sub{font-size:13px;color:#666}
+.curriculum-row{display:flex;gap:12px;margin-bottom:8px}
+.curriculum-row-label{font-size:11px;letter-spacing:.08em;color:#666;font-weight:700;width:40px;flex-shrink:0;padding-top:2px}
+.curriculum-row-val{font-size:13px;color:#444;line-height:1.6}
+
+/* ─── 実施時期 ─── */
+.gantt{margin-top:40px}
+.gantt-title{font-size:12px;letter-spacing:.1em;color:#666;font-weight:700;margin-bottom:16px}
+.gantt-row{display:grid;grid-template-columns:160px repeat(11,1fr);gap:0;margin-bottom:6px;align-items:center}
+.gantt-label{font-size:13px;font-weight:500;padding-right:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gantt-month{height:8px;border-radius:4px}
+.gantt-empty{height:8px}
+.gantt-header{display:grid;grid-template-columns:160px repeat(11,1fr);gap:0;margin-bottom:8px}
+.gantt-header-label{font-size:11px;color:#999;letter-spacing:.04em}
+.gantt-header-month{font-size:10px;color:#999;text-align:center}
+
+/* ─── プログラム ─── */
+.prog-section{padding:80px 0}
+.prog-section + .prog-section{border-top:1px solid #eee}
+.prog-header{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+.prog-num{font-size:56px;font-weight:700;line-height:1;letter-spacing:-.04em}
+.prog-title{font-size:28px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.prog-catch{font-size:16px;line-height:1.85;color:#444;margin-bottom:40px}
+
+/* Journey: ゲストリスト */
+.guest-list{border-top:1px solid #eee}
+.guest-row{display:grid;grid-template-columns:28px 1fr 1fr 80px;gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid #f0f0f0}
+.guest-num{font-size:12px;color:#999;font-weight:700;text-align:right}
+.guest-name{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.guest-org{font-size:13px;color:#666}
+.guest-theme{font-size:13px;color:#444;line-height:1.5}
+.guest-date{font-size:12px;color:#999;text-align:right}
+.guest-total{text-align:right;font-size:12px;color:#666;padding-top:12px;letter-spacing:.04em}
+
+/* 哲学対話: テーマリスト */
+.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;border-top:1px solid #eee}
+.topic-row{display:flex;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid #f0f0f0}
+.topic-num{font-size:11px;color:#999;font-weight:700;width:24px;flex-shrink:0;text-align:right}
+.topic-theme{font-size:14px;line-height:1.5;color:#222;flex:1}
+.topic-date{font-size:12px;color:#999;flex-shrink:0;min-width:32px;text-align:right}
+.topic-credit{text-align:right;font-size:12px;color:#666;padding-top:12px;grid-column:1/-1;letter-spacing:.04em}
+
+/* ファシリテーター */
+.facilitator{display:flex;gap:20px;align-items:center;padding:24px;background:#f8f8f8;margin-bottom:32px}
+.facilitator-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.facilitator-label{font-size:11px;letter-spacing:.1em;color:#666;font-weight:700;margin-bottom:4px}
+.facilitator-name{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.facilitator-org{font-size:13px;color:#666;margin-top:2px}
+
+/* Phase タイムライン */
+.phase-list{margin-top:0}
+.phase-item{display:grid;grid-template-columns:24px 1fr;gap:0 24px;padding-bottom:40px;position:relative}
+.phase-item:last-child{padding-bottom:0}
+.phase-item::before{content:'';position:absolute;left:11px;top:24px;bottom:0;width:2px;background:#eee}
+.phase-item:last-child::before{display:none}
+.phase-dot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;position:relative;z-index:1}
+.phase-dot span{font-size:10px;font-weight:700;color:#fff}
+.phase-content{}
+.phase-num{font-size:11px;letter-spacing:.1em;font-weight:700;margin-bottom:4px}
+.phase-title{font-size:17px;font-weight:700;letter-spacing:-.01em;margin-bottom:4px}
+.phase-date{font-size:12px;color:#999;margin-bottom:8px}
+.phase-desc{font-size:14px;color:#444;line-height:1.75}
+.phase-note{font-size:13px;color:#999;margin-top:6px;line-height:1.6}
+
+/* 写真グリッド */
+.photo-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:40px}
+.photo-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:40px}
+.photo-grid-3 img,.photo-grid-2 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;display:block}
+.photo-full{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:4px;display:block;margin-top:40px}
+.photo-caption{font-size:11px;color:#777;letter-spacing:.04em;margin-top:8px;text-align:center}
+
+/* WOW */
+.wow-badge{display:inline-flex;flex-direction:column;gap:6px;background:#F1D035;padding:20px 28px;margin-top:32px}
+.wow-label{font-size:11px;letter-spacing:.12em;font-weight:700}
+.wow-round{font-size:14px;font-weight:700}
+
+/* 全体を振り返って */
+.reflection-img{width:100%;display:block}
+
+/* ─── FOOTER ─── */
+.footer{padding:48px;border-top:1px solid #eee;display:flex;align-items:center;justify-content:space-between}
+.footer-org{font-size:13px;color:#666}
+.footer-title{font-size:13px;color:#666}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero{height:420px}
+  .hero-content{bottom:40px;padding:0 24px}
+  .hero-eyebrow{font-size:11px;margin-bottom:12px}
+  .hero-title{font-size:36px;margin-bottom:12px}
+  .hero-sub{font-size:14px}
+
+  /* Container */
+  .container{padding:0 24px}
+
+  /* Section */
+  .section{padding:56px 0}
+  .section-title{font-size:28px}
+  .section-title-sm{font-size:22px}
+
+  /* 実践者 */
+  .practitioner{flex-direction:column;gap:20px}
+  .practitioner-photo-wrap{width:88px;height:88px}
+  .practitioner-name{font-size:22px}
+
+  /* 概要グリッド */
+  .overview-grid{grid-template-columns:1fr}
+
+  /* 目的 3原則 */
+  .purpose-tag{font-size:13px}
+  .principle-grid{grid-template-columns:1fr;gap:16px;margin-top:28px}
+
+  /* カリキュラム体系 */
+  .curriculum-grid{grid-template-columns:1fr}
+  .curriculum-col + .curriculum-col{border-left:none;border-top:1px solid #eee}
+
+  /* ガントチャート */
+  .gantt{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .gantt-header,.gantt-row{min-width:480px}
+
+  /* プログラム */
+  .prog-section{padding:56px 0}
+  .prog-num{font-size:40px}
+  .prog-title{font-size:22px}
+  .prog-catch{font-size:14px}
+
+  /* Journey ゲストリスト：2行レイアウト（名前行 + テーマ行） */
+  .guest-row{grid-template-columns:24px 1fr;grid-template-rows:auto auto;gap:4px 8px}
+  .guest-num{grid-row:1;grid-column:1;align-self:center}
+  .guest-name{grid-row:1;grid-column:2}
+  .guest-theme{grid-row:2;grid-column:2;padding-bottom:4px}
+  .guest-date{display:none}
+
+  /* 哲学対話 テーマリスト */
+  .topic-grid{grid-template-columns:1fr}
+
+  /* ファシリテーター */
+  .facilitator{padding:16px}
+
+  /* 写真グリッド */
+  .photo-grid-3{grid-template-columns:1fr 1fr;gap:4px}
+  .photo-grid-2{grid-template-columns:1fr}
+
+  /* 工房写真（full-bleed 2col） */
+  .prog-section > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important
+  }
+
+  /* WOW バッジ */
+  .prog-section [style*="display:flex;gap:16px"]{
+    flex-direction:column;gap:8px
+  }
+
+  /* フッター */
+  .footer{flex-direction:column;gap:8px;align-items:flex-start;padding:32px 24px}
+}
+
+@media (max-width: 480px) {
+  .hero{height:360px}
+  .hero-title{font-size:30px}
+  .hero-content{padding:0 20px}
+  .container{padding:0 20px}
+  .prog-num{font-size:32px}
+  .prog-header{gap:10px}
+  .photo-grid-3{grid-template-columns:1fr}
+  .guest-row{grid-template-columns:20px 1fr}
+  .guest-name{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+  HERO
+══════════════════════════════════════ -->
+<div class="hero">
+  <img src="photo/057F8B84-FC72-4C25-8D2F-91780BC933A4_1_105_c.jpeg" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">長野県立松川高校　社会教養（選択科目）　2025年度</div>
+    <h1 class="hero-title">社会とつながる教室</h1>
+    <p class="hero-sub">地域の資源や人とともに、自分が実現したいことを形にする力を育む。<br>1年間のカリキュラム実践記録。</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  実践者
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Practitioner</div>
+    <div class="practitioner">
+      <div class="practitioner-photo-wrap">
+        <img class="practitioner-photo" src="photo/新井直彦顔.webp" alt="新井直彦">
+      </div>
+      <div>
+        <div class="practitioner-name">新井 直彦</div>
+        <div class="practitioner-title" style="line-height:1.9">
+          長野県立大学 ソーシャル・イノベーション創出センター 地域コーディネーター<br>
+          長野県松川高等学校・長野県飯田高等学校 連携コーディネーター<br>
+          合同会社ロボウノイシ 代表<br>
+          マツカワたがやすかいぎ 事務局<br>
+          根羽村 学びの村づくり サポーター<br>
+          Learn by Creation NAGANO 実行委員<br>
+          元自治体職員<br>
+          元社会教育主事
+        </div>
+        <p class="practitioner-desc">学校と地域社会をつなぐ連携コーディネーターとして、松川高校「社会教養」科目の全カリキュラムを設計・実施。地域の資源・人・課題を学びのフィールドとして取り込み、生徒が「本物の社会」と出会う機会をつくっている。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  実践概要
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Overview</div>
+    <div class="overview-grid">
+      <div class="overview-item">
+        <div class="overview-label">学校</div>
+        <div class="overview-value">長野県立松川高校</div>
+        <div class="overview-value-sm">社会教養（選択科目）</div>
+      </div>
+      <div class="overview-item">
+        <div class="overview-label">対象</div>
+        <div class="overview-value">2年生 22名</div>
+      </div>
+      <div class="overview-item">
+        <div class="overview-label">期間</div>
+        <div class="overview-value">2025年6月 — 2026年2月</div>
+      </div>
+      <div class="overview-item">
+        <div class="overview-label">授業数</div>
+        <div class="overview-value">週2コマ　総50コマ</div>
+        <div class="overview-value-sm">約9ヶ月にわたる連続実践</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  目的
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Purpose</div>
+    <div class="purpose-tag">自己実現する力を育む</div>
+    <p class="body-text">地域の資源や人とともに実践を通して、自分が実現したいことを形にする力を身につけ、ありたい自分を見つける＝自己実現できる力を身につける。</p>
+    <p class="body-text">自己実現力を育むために必要なのは、自分のやりたいことや自分の生きるための軸を見つけること。答えを見つけて満足するのではなく、問い続けること。そして、生徒自身にとっては初めての体験だとしても、様々な経験やノウハウをもつ地域の人と連携することで実現できるという体験を重ねること。</p>
+    <p class="body-text">学びの場は、教室の中だけでなく社会にある、学校と社会のつながった学びの実践を目指す。</p>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:32px;margin-bottom:24px">
+      <div style="flex:1;height:1px;background:#E03B20"></div>
+      <div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#E03B20;white-space:nowrap">地域と連携した学び</div>
+      <div style="flex:1;height:1px;background:#E03B20"></div>
+    </div>
+    <div class="principle-grid">
+      <div class="principle-item">
+        <div class="principle-title">とにかくいろんな人に出会う</div>
+        <div class="principle-desc">自分のやりたいこと、興味・関心のあることが見つかる</div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-title">地域や社会フィールドで実践する</div>
+        <div class="principle-desc">学校で学んだ知識を地域や社会で使える知恵に変換する力をつける</div>
+      </div>
+      <div class="principle-item">
+        <div class="principle-title">自分の得意なことを誰かのために活かす</div>
+        <div class="principle-desc">仲間や地域の人など、他者と協働する力を身につける</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  カリキュラム体系
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Curriculum</div>
+    <div class="section-title-sm">自己実現力を育むための3つのカリキュラム</div>
+    <div class="curriculum-grid">
+      <div class="curriculum-col">
+        <div class="curriculum-phase" style="color:#c8a000">広げる</div>
+        <div class="curriculum-type">やりたいことに出会う授業</div>
+        <div class="curriculum-prog-name">01　起業家に出会う Journey</div>
+        <div style="height:16px"></div>
+        <div class="curriculum-row">
+          <div class="curriculum-row-label">思考系</div>
+          <div class="curriculum-row-val">自分を知る（対話）</div>
+        </div>
+        <div class="curriculum-row">
+          <div class="curriculum-row-label">実践系</div>
+          <div class="curriculum-row-val">起業家に出会う（知る）</div>
+        </div>
+      </div>
+      <div class="curriculum-col">
+        <div class="curriculum-phase" style="color:#E03B20">深める</div>
+        <div class="curriculum-type">やりたいことを掘り下げる授業</div>
+        <div class="curriculum-prog-name">02　哲学対話</div>
+        <div style="height:16px"></div>
+        <div class="curriculum-row">
+          <div class="curriculum-row-label">思考系</div>
+          <div class="curriculum-row-val">問いを立てる（哲学対話）</div>
+        </div>
+        <div class="curriculum-row">
+          <div class="curriculum-row-label">実践系</div>
+          <div class="curriculum-row-val">ケース・スタディ（調べる）</div>
+        </div>
+      </div>
+      <div class="curriculum-col">
+        <div class="curriculum-phase" style="color:#133582">活かす</div>
+        <div class="curriculum-type">やってみたいことを実際にやってみる授業</div>
+        <div class="curriculum-prog-name">03-01　ベンチプロジェクト</div>
+        <div class="curriculum-prog-name" style="margin-top:2px;margin-bottom:0">03-02　小さなお店プロジェクト</div>
+        <div style="height:16px"></div>
+        <div class="curriculum-row">
+          <div class="curriculum-row-label">思考系</div>
+          <div class="curriculum-row-val">つながりを考える（システム思考）</div>
+        </div>
+        <div class="curriculum-row">
+          <div class="curriculum-row-label">実践系</div>
+          <div class="curriculum-row-val">プロジェクト科目（創造する）</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gantt -->
+    <div class="gantt">
+      <div class="gantt-title">実施時期</div>
+      <div class="gantt-header">
+        <div class="gantt-header-label"></div>
+        <div class="gantt-header-month">4</div>
+        <div class="gantt-header-month">5</div>
+        <div class="gantt-header-month">6</div>
+        <div class="gantt-header-month">7</div>
+        <div class="gantt-header-month">8</div>
+        <div class="gantt-header-month">9</div>
+        <div class="gantt-header-month">10</div>
+        <div class="gantt-header-month">11</div>
+        <div class="gantt-header-month">12</div>
+        <div class="gantt-header-month">1</div>
+        <div class="gantt-header-month">2</div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label" style="font-size:12px;color:#c8a000;font-weight:700">01 Journey</div>
+        <div class="gantt-empty"></div><div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#F1D035"></div>
+        <div class="gantt-month" style="background:#F1D035"></div>
+        <div class="gantt-month" style="background:#F1D035"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#F1D035"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#F1D035"></div>
+        <div class="gantt-month" style="background:#F1D035"></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label" style="font-size:12px;color:#E03B20;font-weight:700">02 哲学対話</div>
+        <div class="gantt-empty"></div><div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+        <div class="gantt-month" style="background:#e88"></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label" style="font-size:12px;color:#133582;font-weight:700">03-01 ベンチ</div>
+        <div class="gantt-empty"></div><div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label" style="font-size:12px;color:#133582;font-weight:700">03-02 小さなお店</div>
+        <div class="gantt-empty"></div><div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-empty"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+        <div class="gantt-month" style="background:#88b"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  01 Journey
+══════════════════════════════════════ -->
+<div class="prog-section">
+  <div class="container">
+    <div class="prog-header">
+      <div class="prog-num" style="color:#F1D035">01</div>
+      <div class="prog-title">起業家に出会う Journey</div>
+    </div>
+    <p class="prog-catch">魅力的な起業家や地域で活躍する人たちと出会って、自分の興味・関心をみつける。</p>
+
+    <div class="guest-list">
+      <div class="guest-row">
+        <div class="guest-num">01</div>
+        <div class="guest-name">清水　遼さん</div>
+        <div class="guest-theme">森林資源の循環とふるさと納税<br><span style="font-size:12px;color:#777">松川町役場産業観光課</span></div>
+        <div class="guest-date">6/4</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">02</div>
+        <div class="guest-name">北沢　毅さん</div>
+        <div class="guest-theme">スマート農業<br><span style="font-size:12px;color:#777">マルカメ農園</span></div>
+        <div class="guest-date">6/25</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">03</div>
+        <div class="guest-name">大倉　正治さん</div>
+        <div class="guest-theme">人工衛星打ち上げプロジェクト<br><span style="font-size:12px;color:#777">（有）工房大倉</span></div>
+        <div class="guest-date">7/1</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">04</div>
+        <div class="guest-name">西岡　春菜さん</div>
+        <div class="guest-theme">障害者雇用支援プログラム<br><span style="font-size:12px;color:#777">マイノリティ研究所（東京大学大学院）</span></div>
+        <div class="guest-date">7/24</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">05</div>
+        <div class="guest-name">野口千英子さん</div>
+        <div class="guest-theme">自己表現と自己実現<br><span style="font-size:12px;color:#777">女優</span></div>
+        <div class="guest-date">8/27</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">06</div>
+        <div class="guest-name">福田　裕美さん</div>
+        <div class="guest-theme">「まずやってみることのススメ」<br><span style="font-size:12px;color:#777">（一社）ソーシャルコーディネートかながわ</span></div>
+        <div class="guest-date">10/29</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">07</div>
+        <div class="guest-name">川上　晃史さん</div>
+        <div class="guest-theme">フィジー×日本の取り組み<br><span style="font-size:12px;color:#777">ソーシャル・イノベーションフィジー</span></div>
+        <div class="guest-date">11/5</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">08</div>
+        <div class="guest-name">土屋　岳詩さん</div>
+        <div class="guest-theme">「どうすればできるのか」の思考<br><span style="font-size:12px;color:#777">ソーシャルイノベーションdot.</span></div>
+        <div class="guest-date">11/26</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">09</div>
+        <div class="guest-name">北原太志郎さん</div>
+        <div class="guest-theme">「Discovery8」<br><span style="font-size:12px;color:#777">（一社）GOKIGEN Nippon</span></div>
+        <div class="guest-date">1/28</div>
+      </div>
+      <div class="guest-row">
+        <div class="guest-num">10</div>
+        <div class="guest-name">當麻　結菜さん</div>
+        <div class="guest-theme">「どうしたら2年後の自分にワクワクできる？」<br><span style="font-size:12px;color:#777">長野県立大学健康発達学部</span></div>
+        <div class="guest-date">2/12</div>
+      </div>
+      <div class="guest-total">全10回開催</div>
+    </div>
+
+    <div class="photo-grid-3">
+      <img src="photo/MSIS1.png" alt="Journey">
+      <img src="photo/MSIS2.png" alt="Journey">
+      <img src="photo/MSIS3.png" alt="Journey">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  02 哲学対話
+══════════════════════════════════════ -->
+<div class="prog-section">
+  <div class="container">
+    <div class="prog-header">
+      <div class="prog-num" style="color:#E03B20">02</div>
+      <div class="prog-title">哲学対話</div>
+    </div>
+    <p class="prog-catch">正解のない時代。そこで求められるのは答えではなく問いをみつけ深める学び。</p>
+
+    <div class="facilitator">
+      <img class="facilitator-photo" src="photo/矢野叶羽.webp" alt="矢野叶羽">
+      <div>
+        <div class="facilitator-label">ファシリテーター</div>
+        <div class="facilitator-name">矢野 叶羽さん</div>
+        <div class="facilitator-org">合同会社キキ</div>
+      </div>
+    </div>
+
+    <div class="topic-grid">
+      <div class="topic-row">
+        <div class="topic-num">01</div>
+        <div class="topic-theme">「好き」「偏愛」って何？</div>
+        <div class="topic-date">6/10</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">02</div>
+        <div class="topic-theme">原動力って何？</div>
+        <div class="topic-date">7/9</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">03</div>
+        <div class="topic-theme">大人って自由？</div>
+        <div class="topic-date">7/15</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">04</div>
+        <div class="topic-theme">どうやったら自由になれるのか</div>
+        <div class="topic-date">10/9</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">05</div>
+        <div class="topic-theme">私たちのベンチプロジェクトについて語ろう</div>
+        <div class="topic-date">10/23</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">06</div>
+        <div class="topic-theme">問いって何？</div>
+        <div class="topic-date">11/13</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">07</div>
+        <div class="topic-theme">生徒からの問い「なぜ学校は義務教育じゃないのか」</div>
+        <div class="topic-date">11/27</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">08</div>
+        <div class="topic-theme">生徒からの問い「なぜ学校は義務教育じゃないのか」</div>
+        <div class="topic-date">12/4</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">09</div>
+        <div class="topic-theme">2025年を振り返ろう</div>
+        <div class="topic-date">12/25</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">10</div>
+        <div class="topic-theme">目標は何のためにたてるのか</div>
+        <div class="topic-date">1/15</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">11</div>
+        <div class="topic-theme">努力って何？</div>
+        <div class="topic-date">1/22</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">12</div>
+        <div class="topic-theme">かっこいい大人ってどんな人？</div>
+        <div class="topic-date">1/29</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">13</div>
+        <div class="topic-theme">対話はどんな意味がありそうか</div>
+        <div class="topic-date">2/12</div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-num">14</div>
+        <div class="topic-theme">対話はどんな意味がありそうか</div>
+        <div class="topic-date">2/19</div>
+      </div>
+    </div>
+
+    <div class="photo-grid-3">
+      <img src="photo/哲学対話1.jpeg" alt="哲学対話">
+      <img src="photo/哲学対話2.jpeg" alt="哲学対話">
+      <img src="photo/哲学対話3.jpeg" alt="哲学対話">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  03-01 ベンチプロジェクト
+══════════════════════════════════════ -->
+<div class="prog-section">
+  <div class="container">
+    <div class="prog-header">
+      <div class="prog-num" style="color:#133582">03-01</div>
+      <div class="prog-title">ベンチプロジェクト</div>
+    </div>
+    <p class="prog-catch">松川町の森で育った100年ヒノキ。それを地元の職人とともにベンチにする。どこに、誰のために置くのか。問いはものづくりから始まった。</p>
+
+    <div class="phase-list">
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>1</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase１　学ぶ・出会う</div>
+          <div class="phase-title">松川町の森と、職人と</div>
+          <div class="phase-date">6/4–6/11（3回）</div>
+          <div class="phase-desc">松川町の森と100年ヒノキ　／　世界のベンチ調査　／　職人チーム顔合わせ</div>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>2</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase２　考える・設計する</div>
+          <div class="phase-title">どこに、誰のために</div>
+          <div class="phase-date">6/18–6/26（3回）</div>
+          <div class="phase-desc">アイデアだし（3回）→ 図面製作　／　「どこに置く？」の問いと対話</div>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>3</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase３　つくる</div>
+          <div class="phase-title">空き教室が、工房になった</div>
+          <div class="phase-date">7/2–9/18（9回）</div>
+          <div class="phase-desc">307号空き教室が工房へ。職人と並んで測る・切る・組む。夏休みを挟んで継続。</div>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>4</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase４　仕上げる・設置する</div>
+          <div class="phase-title">焼き印を刻んで、完成</div>
+          <div class="phase-date">10/8–10/16（3回）</div>
+          <div class="phase-desc">塗装2回 → 設置場所へ。ベンチに名前を刻んで完成。</div>
+          <div class="phase-note" style="margin-top:10px">講師：（株）ヤマキチ木材（材木屋）平沢達也さん　／　tunnelworks（家具屋）中田裕明さん　／　四宮建築（大工）四宮陽我さん　　全18回開催</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 座るだけではないベンチとは？（P38下部） -->
+  <div class="container" style="margin-top:48px">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px">座るだけではないベンチとは？</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div>
+        <img src="photo/bench1.png" style="width:100%;display:block;border-radius:4px">
+        <div style="font-size:13px;color:#444;margin-top:8px;text-align:center">下に荷物が置ける</div>
+      </div>
+      <div>
+        <img src="photo/bench2.png" style="width:100%;display:block;border-radius:4px">
+        <div style="font-size:13px;color:#444;margin-top:8px;text-align:center">両側から座れる</div>
+      </div>
+      <div>
+        <img src="photo/bench3.png" style="width:100%;display:block;border-radius:4px">
+        <div style="font-size:13px;color:#444;margin-top:8px;text-align:center">弁当を置くテーブル</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 工房写真：空き教室が工房になった（P39） -->
+  <div class="container" style="margin-top:48px">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:20px">空き教室が、工房になった。</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div>
+        <img src="photo/0A130860-43C0-40D5-A672-C4FBAC154F48_1_105_c.jpeg" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px">
+        <div style="margin-top:8px"><div style="font-size:14px;font-weight:700">木を切る</div><div style="font-size:13px;color:#666;margin-top:2px">のこぎりを手に、初めての木工</div></div>
+      </div>
+      <div>
+        <img src="photo/18F10569-5562-4545-AC82-778C14F96DD2_1_105_c.jpeg" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px">
+        <div style="margin-top:8px"><div style="font-size:14px;font-weight:700">寸法を測る</div><div style="font-size:13px;color:#666;margin-top:2px">図面と睨めっこしながら 墨付け</div></div>
+      </div>
+      <div>
+        <img src="photo/5BB8B53F-9B8D-4ECA-B9B8-7425A30B15E6_1_105_c.jpeg" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px">
+        <div style="margin-top:8px"><div style="font-size:14px;font-weight:700">組み立てる</div><div style="font-size:13px;color:#666;margin-top:2px">電動ドリルで部材を固定していく</div></div>
+      </div>
+      <div>
+        <img src="photo/DBDC94C7-A75D-470C-91C5-7815F2C0D1E5_1_105_c.jpeg" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px">
+        <div style="margin-top:8px"><div style="font-size:14px;font-weight:700">名前を刻む</div><div style="font-size:13px;color:#666;margin-top:2px">仕上げに焼き印。自分だけの一脚に。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ベンチ完成（P40右写真） -->
+  <div class="container" style="margin-top:48px">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px">そして、ベンチが完成</div>
+    <img src="photo/52C1BAA0-A315-4178-9199-D8CD8BECA7B2_1_105_c.jpeg" style="width:100%;display:block;border-radius:4px;aspect-ratio:4/3;object-fit:cover">
+  </div>
+
+  <div class="container">
+
+    <!-- WOW信州 -->
+    <div style="margin-top:48px;padding-top:40px;border-top:1px solid #eee">
+      <div style="font-size:12px;letter-spacing:.12em;color:#666;font-weight:700;margin-bottom:16px">SIDE STORY</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px">WOW！信州 東京ラウンド進出</div>
+      <p style="font-size:15px;line-height:1.85;color:#444;margin-bottom:24px">ベンチプロジェクトの実践を携え、佐々木詩音くん（2年）が舞台に立った。SHINSHUラウンドで見事優秀賞を受賞し、東京へ。</p>
+      <div style="display:flex;gap:16px">
+        <div style="background:#F1D035;padding:12px 20px">
+          <div style="font-size:11px;letter-spacing:.1em;font-weight:700;margin-bottom:4px">ROUND 1 / SHINSHUラウンド</div>
+          <div style="font-size:16px;font-weight:700">優秀賞</div>
+        </div>
+        <div style="background:#F0F0F0;padding:12px 20px">
+          <div style="font-size:11px;letter-spacing:.1em;font-weight:700;margin-bottom:4px">ROUND 2 / TOKYOラウンド</div>
+          <div style="font-size:16px;font-weight:700">奨励賞</div>
+        </div>
+      </div>
+      <img src="photo/WOW信州SHINSHUラウンド.png" alt="WOW信州" style="width:100%;display:block;margin-top:24px;border-radius:4px">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  03-02 小さなお店プロジェクト
+══════════════════════════════════════ -->
+<div class="prog-section">
+  <div class="container">
+    <div class="prog-header">
+      <div class="prog-num" style="color:#133582">03-02</div>
+      <div class="prog-title">小さなお店<br>プロジェクト</div>
+    </div>
+    <p class="prog-catch">「会社ってなんだろう」からはじまった。学校を自分たちの手で魅力的に。学校に購買部を作りたい。</p>
+
+    <div class="phase-list">
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>1</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase１</div>
+          <div class="phase-title">購買プロジェクトガイダンス</div>
+          <div class="phase-date">10/30（1回）</div>
+          <div class="phase-desc">何をするのか。なぜやるのか。</div>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>2</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase２</div>
+          <div class="phase-title">会社ってなんだろう</div>
+          <div class="phase-date">11/11–11/27（3回）</div>
+          <div class="phase-desc">お金を儲けるだけが会社じゃない。社会をよりよくする会社とは。</div>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>3</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase３</div>
+          <div class="phase-title">自分たちで模擬会社を設立する</div>
+          <div class="phase-date">12/3–1/21（6回）</div>
+          <div class="phase-desc">会社を設立して、仕入れ・プロモーション・販売戦略を考える</div>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-dot" style="background:#133582"><span>4</span></div>
+        <div class="phase-content">
+          <div class="phase-num" style="color:#133582">phase４</div>
+          <div class="phase-title">実際に仕入れからお店を出すまでやってみる</div>
+          <div class="phase-date">2/4–2/5（2回）</div>
+          <div class="phase-desc">教室で模擬的にお店を開く</div>
+          <div class="phase-note">※インフルエンザによる学校閉鎖等で、学校全体に向けてお店を開くところまではできなかった</div>
+          <div class="phase-note" style="margin-top:8px;color:#666">（全11回開催）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  全体を振り返って
+══════════════════════════════════════ -->
+<div class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="section-eyebrow">Reflection</div>
+    <div class="section-title-sm">全体を振り返って</div>
+  </div>
+  <div class="container" style="margin-top:40px">
+
+    <!-- ビジョン -->
+    <div style="background:#39897e;padding:20px 28px;margin-bottom:48px;color:#fff">
+      <div style="font-size:11px;letter-spacing:.12em;font-weight:700;margin-bottom:6px">VISION</div>
+      <div style="font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.4">未来を自分たちの手で創造する自己実現力</div>
+    </div>
+
+    <!-- ストリーム① -->
+    <div style="margin-bottom:56px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #000">
+        <div style="font-size:16px;font-weight:700">① 高校生同士の交流・共同作業</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#E03B20;color:#fff;padding:2px 6px">哲学対話</span>
+          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">ベンチPJ</span>
+          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">お店PJ</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:0;align-items:start;row-gap:0">
+        <!-- 短期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">短期アウトカム</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid #b0d0cb;padding:14px 16px;margin-bottom:2px">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">コミュニケーション／仲間づくり</div>
+          <ul style="font-size:13px;color:#444;line-height:1.75;padding-left:16px;margin:0">
+            <li>初めてしゃべった人との会話が楽しかった</li>
+            <li>友人の意外な一面を知った</li>
+            <li>コミュニケーション力がついた</li>
+          </ul>
+        </div>
+        <!-- 矢印 -->
+        <div></div>
+        <div style="padding:4px 0 4px 20px;font-size:18px;color:#ccc">↓</div>
+        <!-- 中期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">中期アウトカム</div>
+        </div>
+        <div style="background:#c4dcd8;border:1px solid #8fbfba;padding:14px 16px;margin-bottom:2px">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">自分自身の新たな居場所の創出</div>
+          <ul style="font-size:13px;color:#444;line-height:1.75;padding-left:16px;margin:0">
+            <li>お昼は桜の木の下のベンチで友達とランチをする</li>
+          </ul>
+        </div>
+        <!-- 矢印 -->
+        <div></div>
+        <div style="padding:4px 0 4px 20px;font-size:18px;color:#ccc">↓</div>
+        <!-- 長期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">長期アウトカム</div>
+        </div>
+        <div style="background:#88b8b2;border:1px solid #5d9c96;padding:14px 16px">
+          <div style="font-size:15px;font-weight:700;color:#000">お互いの挑戦を応援しあうコミュニティの形成・維持</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ストリーム② -->
+    <div style="margin-bottom:56px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #000">
+        <div style="font-size:16px;font-weight:700">② 起業家との出会い・交流</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#c8a000;color:#fff;padding:2px 6px">Journey</span>
+          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">ベンチPJ</span>
+          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">お店PJ</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:0;align-items:start;row-gap:0">
+        <!-- 短期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">短期アウトカム</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid #b0d0cb;padding:14px 16px;margin-bottom:2px">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">地域課題・社会課題への理解と当事者意識が芽生える</div>
+          <ul style="font-size:13px;color:#444;line-height:1.75;padding-left:16px;margin:0">
+            <li>輸入材が多くて地域の森の木が使われていないことを初めて知った</li>
+            <li>何もないと思っていたが、自然もまた地域の魅力になるんだ</li>
+          </ul>
+        </div>
+        <!-- 矢印 -->
+        <div></div>
+        <div style="padding:4px 0 4px 20px;font-size:18px;color:#ccc">↓</div>
+        <!-- 中期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">中期アウトカム</div>
+        </div>
+        <div style="background:#c4dcd8;border:1px solid #8fbfba;padding:14px 16px;margin-bottom:2px">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">自分のやりたいことや生きていくための軸がみつかる</div>
+          <ul style="font-size:13px;color:#444;line-height:1.75;padding-left:16px;margin:0">
+            <li>自分はものづくりが好きなのかもしれない</li>
+            <li>将来建築系の仕事を目指したくなった</li>
+          </ul>
+        </div>
+        <!-- 矢印 -->
+        <div></div>
+        <div style="padding:4px 0 4px 20px;font-size:18px;color:#ccc">↓</div>
+        <!-- 長期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">長期アウトカム</div>
+        </div>
+        <div style="background:#88b8b2;border:1px solid #5d9c96;padding:14px 16px">
+          <div style="font-size:15px;font-weight:700;color:#000">将来の選択肢がみつかり、そのための一歩を踏み出す</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ストリーム③ -->
+    <div style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #000">
+        <div style="font-size:16px;font-weight:700">③ 社会へのアウトプット</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">ベンチPJ</span>
+          <span style="font-size:11px;background:#000;color:#fff;padding:2px 6px">WOW信州</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:0;align-items:start;row-gap:0">
+        <!-- 短期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">短期アウトカム</div>
+        </div>
+        <div style="background:#ffffff;border:1px solid #b0d0cb;padding:14px 16px;margin-bottom:2px">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">プロトタイプ・プロジェクトの実践</div>
+          <ul style="font-size:13px;color:#444;line-height:1.75;padding-left:16px;margin:0">
+            <li>桜ベンチ／バス停ベンチを製作</li>
+          </ul>
+        </div>
+        <!-- 矢印 -->
+        <div></div>
+        <div style="padding:4px 0 4px 20px;font-size:18px;color:#ccc">↓</div>
+        <!-- 中期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">中期アウトカム</div>
+        </div>
+        <div style="background:#c4dcd8;border:1px solid #8fbfba;padding:14px 16px;margin-bottom:2px">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">高校生発のプロジェクトが創出される</div>
+          <ul style="font-size:13px;color:#444;line-height:1.75;padding-left:16px;margin:0">
+            <li>松川町にベンチを100個置きたい</li>
+            <li>松川高校のベンチをブランド化したい</li>
+          </ul>
+        </div>
+        <!-- 矢印 -->
+        <div></div>
+        <div style="padding:4px 0 4px 20px;font-size:18px;color:#ccc">↓</div>
+        <!-- 長期 -->
+        <div style="padding-top:2px;padding-right:16px">
+          <div style="font-size:10px;letter-spacing:.06em;font-weight:700;color:#666">長期アウトカム</div>
+        </div>
+        <div style="background:#88b8b2;border:1px solid #5d9c96;padding:14px 16px">
+          <div style="font-size:15px;font-weight:700;color:#000">地域からのニーズが高まる、様々な事業が継続的に生み出される</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  NEXT STEP
+══════════════════════════════════════ -->
+<div style="background:#f5f5f5;border-left:4px solid #F1D035;padding:32px 0;margin-top:0">
+  <div class="container">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.12em;color:#888;margin-bottom:12px">NEXT STEP</div>
+    <div style="font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px">2026年度も、続いています。</div>
+    <p style="font-size:15px;line-height:1.9;color:#444;margin:0">「ベンチプロジェクト」が「ドローンまちづくりプロジェクト」に変わって、高校生が地域に誇れる技術を学ぶとともに、災害対策や人手不足の解決など社会課題解決のツールとしてドローンを捉え、地域と自分自身の未来を主体的に考え、取組む——「社会とつながる教室」の挑戦は、2026年度も松川高校で続いています。</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-org">Learn by Creation NAGANO</div>
+  <div class="footer-title">2025年度「社会とつながる教室」事業 実践記録</div>
+  <div style="font-size:11px;color:#999;margin-top:8px">© Learn by Creation NAGANO</div>
+</footer>
+
+</body>
+</html>
