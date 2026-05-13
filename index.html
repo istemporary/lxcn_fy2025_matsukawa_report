@@ -154,9 +154,9 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
 /* ─── 目的 ─── */
 .purpose-tag{display:inline-block;background:#E03B20;color:#fff;font-size:14px;font-weight:700;padding:6px 16px;letter-spacing:.04em;margin-bottom:24px}
 .principle-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:40px}
-.principle-item{border-top:3px solid #000;padding-top:16px}
-.principle-title{font-size:15px;font-weight:700;margin-bottom:10px}
-.principle-desc{font-size:13px;color:#666;line-height:1.75}
+.principle-item{background:#fdf0ee;padding:20px 24px}
+.principle-title{font-size:15px;font-weight:700;margin-bottom:10px;color:#c02a12}
+.principle-desc{font-size:13px;color:#555;line-height:1.75}
 
 /* ─── カリキュラム体系 ─── */
 .curriculum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid #eee}
@@ -173,13 +173,13 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
 /* ─── 実施時期 ─── */
 .gantt{margin-top:40px}
 .gantt-title{font-size:12px;letter-spacing:.1em;color:#666;font-weight:700;margin-bottom:16px}
-.gantt-row{display:grid;grid-template-columns:160px repeat(11,1fr);gap:0;margin-bottom:6px;align-items:center}
-.gantt-label{font-size:13px;font-weight:500;padding-right:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gantt-row{display:grid;grid-template-columns:130px repeat(11,1fr);gap:0;margin-bottom:6px;align-items:center}
+.gantt-label{font-size:15px;font-weight:500;padding-right:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gantt-month{height:8px;border-radius:4px}
 .gantt-empty{height:8px}
-.gantt-header{display:grid;grid-template-columns:160px repeat(11,1fr);gap:0;margin-bottom:8px}
-.gantt-header-label{font-size:11px;color:#999;letter-spacing:.04em}
-.gantt-header-month{font-size:10px;color:#999;text-align:center}
+.gantt-header{display:grid;grid-template-columns:130px repeat(11,1fr);gap:0;margin-bottom:8px}
+.gantt-header-label{font-size:12px;color:#999;letter-spacing:.04em}
+.gantt-header-month{font-size:12px;color:#999;text-align:center}
 
 /* ─── プログラム ─── */
 .prog-section{padding:80px 0}
@@ -321,6 +321,7 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
 
   /* フッター */
   .footer{flex-direction:column;gap:8px;align-items:flex-start;padding:32px 24px}
+  .bench-grid{grid-template-columns:1fr!important}
 }
 
 @media (max-width: 480px) {
@@ -805,7 +806,7 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
   <!-- 座るだけではないベンチとは？（P38下部） -->
   <div class="container" style="margin-top:48px">
     <div style="font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px">座るだけではないベンチとは？</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+    <div class="bench-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
       <div>
         <img src="photo/bench1.png" style="width:100%;display:block;border-radius:4px">
         <div style="font-size:13px;color:#444;margin-top:8px;text-align:center">下に荷物が置ける</div>
@@ -947,9 +948,9 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
       <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #000">
         <div style="font-size:16px;font-weight:700">① 高校生同士の交流・共同作業</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <span style="font-size:11px;background:#E03B20;color:#fff;padding:2px 6px">哲学対話</span>
-          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">ベンチPJ</span>
-          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">お店PJ</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #E03B20;color:#444;padding:2px 6px">哲学対話</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #133582;color:#444;padding:2px 6px">ベンチPJ</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #133582;color:#444;padding:2px 6px">お店PJ</span>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:80px 1fr;gap:0;align-items:start;row-gap:0">
@@ -996,9 +997,9 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
       <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #000">
         <div style="font-size:16px;font-weight:700">② 起業家との出会い・交流</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <span style="font-size:11px;background:#c8a000;color:#fff;padding:2px 6px">Journey</span>
-          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">ベンチPJ</span>
-          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">お店PJ</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #c8a000;color:#444;padding:2px 6px">Journey</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #133582;color:#444;padding:2px 6px">ベンチPJ</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #133582;color:#444;padding:2px 6px">お店PJ</span>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:80px 1fr;gap:0;align-items:start;row-gap:0">
@@ -1045,8 +1046,8 @@ body{background:#fff;font-family:var(--font-family, 'Noto Sans JP', sans-serif);
       <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #000">
         <div style="font-size:16px;font-weight:700">③ 社会へのアウトプット</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <span style="font-size:11px;background:#133582;color:#fff;padding:2px 6px">ベンチPJ</span>
-          <span style="font-size:11px;background:#000;color:#fff;padding:2px 6px">WOW信州</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #133582;color:#444;padding:2px 6px">ベンチPJ</span>
+          <span style="font-size:11px;background:transparent;border:1.5px solid #444;color:#444;padding:2px 6px">WOW信州</span>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:80px 1fr;gap:0;align-items:start;row-gap:0">
